@@ -1,0 +1,23 @@
+git add . 
+	adiciona todos os arquivos do repositório para fazer o commit 
+
+git commit -m "qualquer mensagem"
+	faz o commit dos arquivos que foram especificados pelo comando add
+
+git log
+	mostra os logs de commit 
+
+git status
+	mostra o status de commit do diretório
+
+.gitignore
+	um arquivo onde cada linha deve ser o nome de outro arquivo ou diretório que deve ser ignorado/não commitados pelo git
+
+git tag -a nomedatagaqui
+	cria uma tag/nome para aquele commit
+
+git push origin nomeBranch
+	para fazer o push(adicionar ao repositorio remoto) em uma determinada branch
+
+git push original master
+	para fazer o push na branch master(principal)
