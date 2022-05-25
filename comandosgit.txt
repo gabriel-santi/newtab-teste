@@ -1,23 +1,44 @@
-git add . 
-	adiciona todos os arquivos do repositório para fazer o commit 
+O QUE É O GIT?
+	Git é uma ferramenta de versionamento de código criada por Linus Torvalds que ajuda programadores a manter seus códigos de maneira organizada.
+	Já o Github é uma plataforma onde você pode colocar seus repositórios Git e outras pessoas podem acessá-lo (dependendo da privacidade do projeto). Seus repositórios ficam em um servidor remoto, permitindo que diversas pessoas tenham acesso ao mesmo repositório, por isso é essencial para projetos onde diversos programadores trabalham em cima de um mesmo código fonte.
 
-git commit -m "qualquer mensagem"
-	faz o commit dos arquivos que foram especificados pelo comando add
 
-git log
-	mostra os logs de commit 
+COMO ACESSAR ESSAS FERRAMENTAS:
+	- O Git precisa ser instalado na sua máquina.
+	- O Github pode ser acessado pela url como qualquer site, só precisa de uma conta.
 
-git status
-	mostra o status de commit do diretório
 
-.gitignore
-	um arquivo onde cada linha deve ser o nome de outro arquivo ou diretório que deve ser ignorado/não commitados pelo git
+PRINCIPAIS COMANDOS:
+	Inicializando:
+	-É preciso iniciar um repositório no git com o comando `git init` dentro da pasta que você vai começar a desenvolver.
+	-Agora você precisa criar um novo repositório no site do Github, para conectar com o repositório local que você criou no passo anterior.
+	-Depois de criado, o Github vai lhe fornecer um link https para aquele repositório.
 
-git tag -a nomedatagaqui
-	cria uma tag/nome para aquele commit
+	Conectando:
+	-Pelo prompt do seu sistema, entre na pasta do projeto.
+	-Com um repositório local(Git) e um remoto(Github) em mãos, para conectá-los você precisa pegar a url fornecida pelo Github e colocá-la no seguinte comando `git remote add origin https://suaURLaqui`
+	-Pronto, ambos estão conectados.
 
-git push origin nomeBranch
-	para fazer o push(adicionar ao repositorio remoto) em uma determinada branch
+	Adicionando arquivos:
+	-Para adicionar arquivos ao seu repositório remoto, você obviamente precisa criar um novo arquivo.	
+	-Após fazer tudo o que tinha pra fazer, digite o comando `git add nomeDoArquivo` para adicionar um arquivo em específico ou simplesmente `git add . ` para adicionar todos, mesmo que você não tenha alterado todos funciona é interessante utilizar esse segundo pois adicionar manualmente cada arquivo pode correr o risco de esquecer algum.
+	-Mas seus arquivos ainda não foram enviados, eles foram adicionados em uma "Sala de espera", estão aguardando sua confirmação.
+	-Agora você precisar commitar (confirmar) esses arquivos através do comando `git commit - m "Mensagem clara sobre as alterações"`.
+	-Feito o commit, você precisa enviar esses arquivos pro repositório remoto do Github pelo comando `git push origin main`.
+	*Com o arquivo ".gitignore" você pode descartar alguns arquivos para que não sejam commitados, basta colocar o nome e extensão de cada arquivo em cada linha do ".gitignore".
 
-git push original master
-	para fazer o push na branch master(principal)
+	Verificando informações:
+	-`git status` descreve a situação atual do repositório, se está tudo nos conformes, se algum arquivo foi alterado, se algum arquivo foi excluído, se tem algum commit esperando para ser realizado...
+	-`git log` mostra os log dos commits: data, hora, alterações e o resposável.
+	-`git branch` mostra as branches existentes e a branch atual.
+
+
+RAMIFICAÇÕES DE UM PROJETO:
+	Durante o desenvolvimento, é possível criar ramificações do projeto original para testar novas funcionalidades ou funções sem afetar o código principal, uma ramificação é chamada de branch.
+	*É interessante deixar na main somente o código pronto para a produção e utilizar das branches para implementar novas features e só anexá-las para a main quando estiverem finalizadas.
+	
+	Criando branches:
+	-Para criar uma branch por linha de comando, utilize `git checkout -b nomeDaBranch`.
+	-Você pode alterar entre as branches pelo comando `git checkout nomeDaBranch`.	
+	-Altere os arquivos, adicione, commite e na hora de fazer o push escolha a branch com `git push origin nomeDaBranch`.
+		
